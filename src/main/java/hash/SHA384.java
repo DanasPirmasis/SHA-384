@@ -11,8 +11,8 @@ import java.nio.file.Paths;
 public class SHA384 {
 
     public static void main(String[] args) {
-        Path path = Paths.get("input.txt");
-
+        Path path = Paths.get(args[0]);
+        //Path path = Paths.get("input.txt");
         try {
             byte[] input = Files.readAllBytes(path);
             byte[] paddedArray = messagePadding(input);
@@ -107,7 +107,6 @@ public class SHA384 {
 
         for (int i = 0; i < chunks.length; i++) {
             System.arraycopy(chunks[i], 0, messageScheduleArray[i], 0, 16);
-            System.out.println();
             for (int j = 16; j < messageScheduleSize; j++) {
                 long sigma0 = Sigma0(messageScheduleArray[i][j - 15]);
                 long sigma1 = Sigma1(messageScheduleArray[i][j - 2]);
@@ -162,7 +161,7 @@ public class SHA384 {
         byte[] paddedMessage = new byte[newMessageLength];
 
         System.arraycopy(message, 0, paddedMessage, 0, message.length);
-
+        //Reikia pridet 0x80, nes 0x80 yra 1000000
         paddedMessage[message.length] = (byte) 0x80;
 
         byte[] lengthInBytes = intToByteArray(message.length * 8);

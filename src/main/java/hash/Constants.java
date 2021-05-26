@@ -1,7 +1,7 @@
 package hash;
 
 public final class Constants {
-    public static final long[] H = new long[]{
+    static final long[] H = new long[]{
             0xcbbb9d5dc1059ed8L,
             0x629a292a367cd507L,
             0x9159015a3070dd17L,
@@ -11,7 +11,8 @@ public final class Constants {
             0xdb0c2e0d64f98fa7L,
             0x47b5481dbefa4fa4L
     };
-    public static final long[] K = new long[]{
+
+    static final long[] K = new long[]{
             0x428A2F98D728AE22L, 0x7137449123EF65CDL, 0xB5C0FBCFEC4D3B2FL, 0xE9B5DBA58189DBBCL, 0x3956C25BF348B538L,
             0x59F111F1B605D019L, 0x923F82A4AF194F9BL, 0xAB1C5ED5DA6D8118L, 0xD807AA98A3030242L, 0x12835B0145706FBEL,
             0x243185BE4EE4B28CL, 0x550C7DC3D5FFB4E2L, 0x72BE5D74F27B896FL, 0x80DEB1FE3B1696B1L, 0x9BDC06A725C71235L,
